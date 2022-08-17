@@ -20,7 +20,10 @@
         <tr>
           <td>Borders</td>
           <td>
-            <ul>
+            <p v-if="borders.length === 0">
+              Este pais no tiene paises fronterizos.<br/>Quizas se trata de una isla...
+            </p>
+            <ul v-else>
               <li v-for="(border, index) in borders" :key="index">
                 <router-link :to="`/list/${border}`">{{ border }}</router-link>
               </li>
