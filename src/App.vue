@@ -1,29 +1,21 @@
-<template>
-  <div className="app">
-    <header className="app-header">
-      <img :src="logo" className="app-logo" alt="logo" />
-      <p>
-        Edit <code>src/app.js</code> and save to reload.
-      </p>
-      <a
-        className="app-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn Vue
-      </a>
-    </header>
+<template> 
+  <div class="app">
+    <Navbar/>
+    <div className="container">
+      <router-view/>
+      
+    </div>
   </div>
 </template>
 
 <script>
-  import logo from './logo.svg';
-  export default {
-    data: () => ({
-      logo
-    })
-  }
+   import Navbar from "./components/Navbar.vue";
+   export default {
+      data: () => ({
+        
+      }),
+      components: { Navbar },
+   }
 </script>
 
 <style>
@@ -39,6 +31,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul {
+  list-style: none;
 }
 
 .app {
