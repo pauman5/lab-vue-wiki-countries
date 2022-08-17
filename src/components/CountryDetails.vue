@@ -40,8 +40,8 @@ export default {
     return {
       name: "",
       capital: "",
-      alpha3code: "",
-      alpha2code: "",
+      alpha3Code: "",
+      alpha2Code: "",
       area: "",
       borders: [],
 
@@ -52,9 +52,9 @@ export default {
   methods: {
     async getCountryByAlphaCode() {
       console.log("estoy dentro de getCountryByAlphaCode");
-      this.alpha3code = this.$route.params.alpha3code;
+      this.alpha3Code = this.$route.params.alpha3Code;
       const response = await fetch(
-        `https://ih-countries-api.herokuapp.com/countries/${alpha3Code}`
+        `https://ih-countries-api.herokuapp.com/countries/${this.alpha3Code}`
       );
       
 
@@ -66,7 +66,7 @@ export default {
       this.capital = finalResponse.capital[0];
       this.area = finalResponse.area;
       this.borders = finalResponse.borders;
-      this.alpha2code = finalResponse.alpha2code;
+      this.alpha2Code = finalResponse.alpha2Code;
 
       this.countryInfo = finalResponse;
     },
